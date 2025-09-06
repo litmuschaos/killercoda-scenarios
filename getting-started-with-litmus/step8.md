@@ -10,7 +10,7 @@
 
 <span style="color:green">ChaosResult CR name will be `<chaos-engine-name>-<chaos-experiment-name>`</span>
 
-`kubectl describe chaosresult nginx-chaos-pod-delete`{{execute}}
+`kubectl describe chaosresult nginx-chaos-pod-delete -n litmus`{{execute}}
 
 Describe the ChaosResult CR to know the status of each experiment. The `status.verdict` is set to `Awaited` when the experiment is in progress, eventually changing to either `Pass` or `Fail`.
 
@@ -22,29 +22,45 @@ Describe the ChaosResult CR to know the status of each experiment. The `status.v
 
 ```bash
 Name:         nginx-chaos-pod-delete
-Namespace:    nginx
-Labels:       name=nginx-chaos-pod-delete
+Namespace:    litmus
+Labels:       app.kubernetes.io/component=experiment-job
+              app.kubernetes.io/part-of=litmus
+              app.kubernetes.io/version=3.20.0
+              batch.kubernetes.io/controller-uid=f18519e9-aa62-4e4c-9cb9-733cf144b4ef
+              batch.kubernetes.io/job-name=pod-delete-wjy03k
+              chaosUID=58094bcf-14d4-4d8b-bc78-3c2241715610
+              controller-uid=f18519e9-aa62-4e4c-9cb9-733cf144b4ef
+              job-name=pod-delete-wjy03k
+              name=pod-delete
 Annotations:  <none>
 API Version:  litmuschaos.io/v1alpha1
 Kind:         ChaosResult
 Metadata:
-  Creation Timestamp:  <Your Creation Timestamp>
+  Creation Timestamp:  2025-09-06T11:54:12Z
   Generation:          2
-  Resource Version:    1335
-  Self Link:           /apis/litmuschaos.io/v1alpha1/namespaces/nginx/chaosresults/nginx-chaos-pod-delete
-  UID:                 b9d9e27c-786d-4203-aef7-f99e3412b041
+  Resource Version:    5670
+  UID:                 0100ea32-6f62-4424-a842-f5f1576bdd40
 Spec:
   Engine:      nginx-chaos
   Experiment:  pod-delete
 Status:
-  Experimentstatus:
-    Fail Step:  N/A
-    Phase:      Completed
-    Verdict:    Pass
+  Experiment Status:
+    Phase:                     Completed
+    Probe Success Percentage:  100
+    Verdict:                   Pass
+  History:
+    Failed Runs:   0
+    Passed Runs:   1
+    Stopped Runs:  0
+    Targets:
+      Chaos Status:  targeted
+      Kind:          deployment
+      Name:          nginx
 Events:
   Type    Reason   Age   From                     Message
   ----    ------   ----  ----                     -------
-  Normal  Summary  2s    pod-delete-e2pdaa-fpwjm  pod-delete experiment has been Passed
+  Normal  Awaited  108s  pod-delete-wjy03k-rm74m  experiment: pod-delete, Result: Awaited
+  Normal  Pass     68s   pod-delete-wjy03k-rm74m  experiment: pod-delete, Result: Pass
 ```
 
 <br>
