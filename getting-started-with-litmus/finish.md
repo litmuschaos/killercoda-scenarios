@@ -1,6 +1,6 @@
 **Litmus** is a toolset to do cloud-native chaos engineering. Litmus provides tools to orchestrate chaos on Kubernetes to help developers and SREs find weaknesses in their application deployments. Litmus can be used to run chaos experiments initially in the staging environment and eventually in production to find bugs, vulnerabilities. Fixing the weaknesses leads to increased resilience of the system. Litmus adopts a “Kubernetes-native” approach to define chaos intent in a declarative manner via custom resources.
 
-The project is under active development as a [Sandbox project with CNCF](https://www.cncf.io/sandbox-projects/). This Katacoda scenario will be updated as it evolves.
+The project is under active development as a [Incubating project with CNCF](https://www.cncf.io/projects/). This Katacoda scenario will be updated as it evolves.
 
 ### With these steps you have learned:
 

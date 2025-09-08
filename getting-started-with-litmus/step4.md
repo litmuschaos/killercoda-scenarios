@@ -18,7 +18,7 @@ For the sake of this tutorial we are going to move forward with the `generic/pod
 
 **Install the Chaos Experiment using the following command**
 
-`kubectl apply -f https://hub.litmuschaos.io/api/chaos/1.8.0?file=charts/generic/pod-delete/experiment.yaml`{{execute}}
+`kubectl apply -f https://hub.litmuschaos.io/api/chaos/3.20.0?file=faults/kubernetes/pod-delete/fault.yaml -n litmus`{{execute}}
 
 <span style="color:green">**Expected Output:**</span>
 
@@ -28,7 +28,7 @@ chaosexperiment.litmuschaos.io/pod-delete created
 
 **Verify if the chaos experiments are installed**
 
-`kubectl get chaosexperiments`{{execute}}
+`kubectl get chaosexperiments -n litmus`{{execute}}
 
 <span style="color:green">**Expected Output:**</span>
 

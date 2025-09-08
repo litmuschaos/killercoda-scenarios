@@ -11,7 +11,7 @@
 <span style="color:green">**Expected Output:**<span>
 
 ```bash
-chaos-operator-ce-<numericId>-<id> 1/1 Running 0
+litmus-<numericId>-<id> 1/1 Running 0
 ```
 
 **Verify if chaos CRDs are installed**
